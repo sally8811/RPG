@@ -1,6 +1,7 @@
 package demo;
 
 import java.util.Random;
+import java.util.ArrayList;
 import bases.Living;
 import humans.Brave;
 import humans.Fighter;
@@ -22,7 +23,7 @@ public class Main {
 		Human Wizard = new Human("安倍晴明", "魔法");
 		
 		// 人間グループのリストを空で生成
-		List<Human> humans = new ArrayList<>();
+		ArrayList<String> humans = new ArrayList<>();
         
 		// 勇者、戦士、魔法使いを人間グループのリストに追加
 		humans.add(Brave);
@@ -35,7 +36,7 @@ public class Main {
 		Monster Dragon = new Monster("紅龍", "炎");
 
 		// モンスターグループのリストを空で生成
-		List<Monster> monsters = new ArrayList<>();
+		ArrayList<String> monsters = new ArrayList<>();
 		
         // スライム、オーク、ドラゴンをモンスターグループのリストに追加
 		monsters.add(Smile);
@@ -66,19 +67,18 @@ public class Main {
 		     attack(Living target); 
 			
 			// モンスターのHPが0以下になれば、モンスターは倒れ、そのモンスターをモンスターグループから削除
-			if (target.getHp() = 0) {
-				
-				
+			Monster select_monster = mnsers.getHp(<=0);
+		    monsters.remove(select_monster);
 
 			// モンスターグループに誰もいなくなれば、人間グループの勝利
-			if (List<Monster> monsters = { } ) {
+			if (monsters.isEmpty()) {
 				System.out.println("#### 人間達は勝利した！！ ####");
 			}
 
 			System.out.println("\n[モンスターのターン！]\n");
 			
 			// 人間グループから1人選択
-			choiceHuman(List<Human> humans);
+			choiceHuman(humans);
 			
 			// モンスターグループから1人選択
 			 choiceMonster(List<Monster> monsters);
@@ -87,12 +87,12 @@ public class Main {
 			 attack(Living target);
 
 			// 人間のHPが0以下になれば、人間は倒れ、その人間をモンスターグループから削除
-			 if (target.getHp() = 0) {
+			 boolean result = humans.removeif(this.hp <= 0);
 
 			// 人間グループに誰もいなくなれば、人間グループの敗北
-				 if (List<Monster> monsters = { } ) {
-						System.out.println("#### 人間達は敗北した！！ ####");
-					}	 
+			 if (humans.isEmpty()) {
+				System.out.println("#### 人間達は敗北した！！ ####");
+			}	 
 			
 			// 現在の各グループの状態を一覧表示
 			showGroupInfos(humans, monsters);

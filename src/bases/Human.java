@@ -21,17 +21,20 @@ public abstract class Human extends Living {
 		
 
 		// 相手のHPをダメージ値だけ減らす
-		int target.getHp() {
-			setHp(-= damage);
-			
-		}
+		int hp = target.getHp();
+		hp -= damage;
+		target.setHp(hp);
+		
 		
 
 		// 自分の攻撃力を1だけ減らす
-		int this.offensive -= 1;
+		int offensive = getOffensive();
+		offensive -= 1;
+		setOffensive(offensive);
 
 		// コンソールにステータスを表示
-		System.out.println(String this.name + "が" + this.weapon + "で攻撃！" + this.target + "に" + int damage + "のダメージを与えた。");
+		System.out.println(this.name + "が" + this.weapon + "で攻撃！" + 
+		target + "に" + damage + "のダメージを与えた。");
 		System.out.println("しかし自分の攻撃力も1減少した。");
 	}
 }
