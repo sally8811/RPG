@@ -11,7 +11,12 @@ public class Dragon extends Monster{
 		this.offensive = offensive;
 	}
 	
-	public int hp = Dice.get(270, 330);
-	public int offensive = Dice.get(12, 18);
+	public void setHp() {
+		this.hp = Dice.get(270, 330);
+	}
+	
+	public void setOffensive() {
+		this.offensive = Dice.get(12, 18);
+	}
 
 }

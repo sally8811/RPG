@@ -11,6 +11,11 @@ public class Smile extends Monster{
 		this.offensive = offensive;
 	}
 	
-	public int hp = Dice.get(70, 130);
-	public int offensive = Dice.get(5, 11);
+	public void setHp() {
+		this.hp = Dice.get(70, 130);
+	}
+	
+	public void setOffensive() {
+		this.offensive = Dice.get(5, 11);
+	}
 }

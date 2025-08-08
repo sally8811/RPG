@@ -11,7 +11,12 @@ public class Wizard extends Human {
 		this.offensive = offensive;
 	}
 	
-	public int hp = Dice.get(120, 180);
-	public int offensive = Dice.get(12, 18);
+	public void setHp() {
+		this.hp = Dice.get(120,180);
+	}
+	
+	public void setOffensive() {
+		this.offensive = Dice.get(12, 18);
+	}
 
 }

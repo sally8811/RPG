@@ -11,7 +11,12 @@ public class Fighter extends Human {
 		this.offensive = offensive;
 	}
 	
-	public int hp = Dice.get(240, 300);
-	public int offensive = Dice.get(17, 23);
+	public void setHp() {
+		this.hp = Dice.get(240, 300);
+	}
+	
+	public void setOffenisve() {
+		this.offensive = Dice.get(17, 23);
+	}
 
 }
