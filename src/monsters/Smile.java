@@ -9,13 +9,8 @@ public class Smile extends Monster{
 		super(name, weapon);
 		this.hp = hp;
 		this.offensive = offensive;
-	}
-	
-	public void setHp() {
+
 		this.hp = Dice.get(70, 130);
-	}
-	
-	public void setOffensive() {
 		this.offensive = Dice.get(5, 11);
 	}
 }

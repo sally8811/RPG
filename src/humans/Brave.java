@@ -9,13 +9,11 @@ public class Brave extends Human {
 		super(name, weapon);
 		this.hp = hp;
 		this.offensive = offensive;
-	}
+	 
 	
-	public void setHp() {
 		this.hp = Dice.get(170, 230);
-	}
 	
-	public void setOffensive() {
 		this.offensive = Dice.get(7, 13);
 	}
-}
+}	
+

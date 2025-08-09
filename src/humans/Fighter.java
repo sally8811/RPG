@@ -9,13 +9,8 @@ public class Fighter extends Human {
 		super(name, weapon);
 		this.hp = hp;
 		this.offensive = offensive;
-	}
-	
-	public void setHp() {
+
 		this.hp = Dice.get(240, 300);
-	}
-	
-	public void setOffenisve() {
 		this.offensive = Dice.get(17, 23);
 	}
 
