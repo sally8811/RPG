@@ -23,8 +23,7 @@ public class Main {
 		Human Wizard = new Human("安倍晴明", "魔法");
 		
 		// 人間グループのリストを空で生成
-		ArrayList<String> humans = new ArrayList<>();
-        
+		List<Human> humans = new ArrayList<>();
 		// 勇者、戦士、魔法使いを人間グループのリストに追加
 		humans.add(Brave);
 		humans.add(Fighter);
@@ -36,7 +35,7 @@ public class Main {
 		Monster Dragon = new Monster("紅龍", "炎");
 
 		// モンスターグループのリストを空で生成
-		ArrayList<String> monsters = new ArrayList<>();
+		List<Monster> monsters = new ArrayList<>();
 		
         // スライム、オーク、ドラゴンをモンスターグループのリストに追加
 		monsters.add(Smile);
@@ -58,18 +57,19 @@ public class Main {
 			System.out.println("\n[人間のターン！]\n");
 
 			// 人間グループから1人選択
-			choiceHuman(humans);
+			choiceHuman(List<Human> humans);
 			
 			// モンスターグループから1人選択
-			 choiceMonster(monsters);
+			choiceMonster(List<Monster> monsters);
             
 			// 選ばれた人間が、選ばれたモンスターを攻撃
 		     attack(Living target); 
 			
 			// モンスターのHPが0以下になれば、モンスターは倒れ、そのモンスターをモンスターグループから削除
 			if(monsters.geHp() <= 0) {
-				Predicate <String> conditon = monsters.get.Hp <= 0;
-				Monster.removeif(cpndition)
+				
+				monsters.remove(select_Monster);
+				
 		    		System.out.println("★ 「" + monsters.getName() + "」は倒れた。");
 			}		
 
@@ -77,23 +77,23 @@ public class Main {
 			if (monsters.isEmpty()) {
 				System.out.println("★★ ==== 決着がついた！！ ==== ★★");
 				System.out.println("#### 人間達は勝利した！！ ####");
+				break;
 			}
 
 			System.out.println("\n[モンスターのターン！]\n");
 			
 			// 人間グループから1人選択
-			choiceHuman(humans);
+			choiceHuman(List<Human> humans);
 			
 			// モンスターグループから1人選択
-			choiceMonster(monsters);
+			choiceMonster(List<Monster> monsters);
 			
 			// 選ばれたモンスターが、選ばれた人間を攻撃
 			 attack(Living target);
 
 			// 人間のHPが0以下になれば、人間は倒れ、その人間をモンスターグループから削除
-			 if(monsters.geHp() <= 0) {
-					Predicate <String> conditon = humans.get.Hp <= 0;
-					Human.removeif(cpndition)
+			 if(humans.geHp() <= 0) {
+				 humans.remove(select_Human);
 			    		System.out.println("★ 「" + humans.getName() + "」は倒れた。");
 				}
 
@@ -101,6 +101,7 @@ public class Main {
 			 if (humans.isEmpty()) {
 				 System.out.println("★★ ==== 決着がついた！！ ==== ★★");
 				System.out.println("#### 人間達は敗北した！！ ####");
+				break;
 			}	 
 			
 			// 現在の各グループの状態を一覧表示
