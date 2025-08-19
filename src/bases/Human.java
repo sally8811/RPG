@@ -10,7 +10,7 @@ public abstract class Human extends Living {
 		// Livingクラスで定義したコンストラクタを利用する
 		 super(name, weapon);
 	}
-	public int damage; 
+	
 
 	// attackメソッドのオーバーライド
 	@Override
