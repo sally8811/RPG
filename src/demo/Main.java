@@ -1,12 +1,18 @@
 package demo;
 
-import java.util.Random;
-import java.util.List;
+
 import java.util.ArrayList;
-import humans.*;
-import monsters.*;
-import bases.*;
-import utils.*;
+import java.util.List;
+
+import bases.Human;
+import bases.Monster;
+import humans.Brave;
+import humans.Fighter;
+import humans.Wizard;
+import monsters.Dragon;
+import monsters.Oak;
+import monsters.Slime;
+import utils.Dice;
 
 public class Main {
 
@@ -28,7 +34,7 @@ public class Main {
 		humans.add(wizard);
 
 		// Slime（スライム）, Oak（オーク）, Dragon（ドラゴン）クラスの各インスタンスを生成
-		Monster smile = new Smile("キングスライム", "体当たり");	
+		Monster slime = new Slime("キングスライム", "体当たり");	
 		Monster oak = new Oak("オークキング", "槍");
 		Monster dragon = new Dragon("紅龍", "炎");
 
@@ -36,7 +42,7 @@ public class Main {
 		List<Monster> monsters = new ArrayList<>();
 		
         // スライム、オーク、ドラゴンをモンスターグループのリストに追加
-		monsters.add(smile);
+		monsters.add(slime);
 		monsters.add(oak);
 		monsters.add(dragon);
 
@@ -63,11 +69,11 @@ public class Main {
 		    human.attack(monster); 
 			
 			// モンスターのHPが0以下になれば、モンスターは倒れ、そのモンスターをモンスターグループから削除
-			if(monsters.getHp() <= 0) {
+			if(monster.getHp() <= 0) {
 				
 				monsters.remove(monster);
 				
-		    		System.out.println("★ 「" + monsters.getName() + "」は倒れた。");
+		    		System.out.println("★ 「" + monster.getName() + "」は倒れた。");
 			}		
 
 			// モンスターグループに誰もいなくなれば、人間グループの勝利
@@ -84,12 +90,12 @@ public class Main {
 			
 			
 			// 選ばれたモンスターが、選ばれた人間を攻撃
-			monster.attack(target);
+			monster.attack(human);
 
 			// 人間のHPが0以下になれば、人間は倒れ、その人間をモンスターグループから削除
-			 if(humans.geHp() <= 0) {
+			 if(human.getHp() <= 0) {
 				 humans.remove(human);
-			    		System.out.println("★ 「" + humans.getName() + "」は倒れた。");
+			    		System.out.println("★ 「" + human.getName() + "」は倒れた。");
 				}
 
 			// 人間グループに誰もいなくなれば、人間グループの敗北
@@ -143,7 +149,6 @@ public class Main {
 		for (Monster monster : monsters) {
 			System.out.println(monster);
 		}
-	}
 	}
 
 }

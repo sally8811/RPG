@@ -23,6 +23,7 @@ public abstract class Monster extends Living {
 			// 相手のHPをダメージ値だけ減らす
 			int hp = target.getHp();
 			hp -= damage;
+			hp = Math.max(hp,0);
 			target.setHp(hp);
 
 			// コンソールにステータスを表示

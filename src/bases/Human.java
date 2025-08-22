@@ -24,6 +24,7 @@ public abstract class Human extends Living {
 		// 相手のHPをダメージ値だけ減らす
 		int hp = target.getHp();
 		hp -= damage;
+		hp = Math.max(hp,0);
 		target.setHp(hp);
 		
 		
@@ -31,6 +32,7 @@ public abstract class Human extends Living {
 		// 自分の攻撃力を1だけ減らす
 		int offensive = getOffensive();
 		offensive -= 1;
+		offensive = Math.max(offensive, 0);
 		setOffensive(offensive);
 
 		// コンソールにステータスを表示
